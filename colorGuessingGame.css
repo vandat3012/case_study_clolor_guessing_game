@@ -10,12 +10,12 @@ body {
     padding-top: 20px;
 
 }
-.square {
-    width: 30%;
+.circle {
+    width: 130px;
+    border-radius: 50%;
     background-color: purple;
     padding-bottom: 30%;
     float: left;
-    margin: 1.66%;
 }
 
 h1 {
@@ -26,7 +26,7 @@ h1 {
     text-transform: uppercase;
 }
 
-#color-display {
+#colorDisplay {
     display: block;
     font-size: 2em;
 }
@@ -35,7 +35,7 @@ h1 {
     background: white;
     height: 30px;
     text-align: center;
-    color: black;
+    color: #ffffff;
 }
 
 #message {
