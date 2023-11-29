@@ -59,8 +59,3 @@ reset();
 function replay(){
     window.location.reload();
 }
-
-
-
-
-
