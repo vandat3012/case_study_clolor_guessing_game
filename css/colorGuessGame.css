@@ -1,5 +1,5 @@
 body {
-    background-color: #232323;
+    background-color: rgba(255, 255, 255, 0.91);
     font-size: 62.5%;
     margin: 0;
 }
@@ -7,7 +7,7 @@ body {
 #container {
     max-width: 400px;
     margin: 0 auto;
-    padding-top: 20px;
+    padding-top: 50px;
 
 }
 .circle {
@@ -33,25 +33,25 @@ h1 {
 
 #stripe {
     background: white;
-    height: 30px;
+    height: 100px;
     text-align: center;
     color: #ffffff;
 }
 
 #message {
     text-transform: uppercase;
-    color: #2C8E99;
-    font-size: 1.5em;
+    color: #ec0b25;
+    font-size: 2em;
     display: inline-block;
     width: 20%;
 }
 
 button {
     outline: none;
-    color: #2C8E99;
+    color: #ec0b25;
     text-transform: uppercase;
     font-size: 1.5em;
-    background-color: white;
+    background-color: rgba(196, 248, 149, 0.97);
     height: 100%;
     letter-spacing: 1px;
 }
