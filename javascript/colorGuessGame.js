@@ -11,14 +11,6 @@ function doColor() {
     return "rgb(" + r + ", " + g + ", " + b + ")";
 }
 
-function getRandomColors() {
-    let arr = [];
-    for (let i = 0; i < numberCircle; i++) {
-        arr.push(doColor());
-    }
-    return arr;
-}
-
 function chooseColor() {
     let random = Math.floor(Math.random() * colors.length);
     return colors[random];
@@ -39,13 +31,21 @@ function createCircle() {
                 changeColors(pickedColor);
             }
             else {
-                this.style.backgroundColor = "rgb(37,35,35)";
+                this.style.backgroundColor = "rgba(255,255,255,0.91)";
                 messageDisplay.textContent = "try again";
             }
         });
     }
 }
 createCircle();
+
+function getRandomColors() {
+    let arr = [];
+    for (let i = 0; i < numberCircle; i++) {
+        arr.push(doColor());
+    }
+    return arr;
+}
 
 function reset() {
     colors = getRandomColors(numberCircle);
@@ -56,6 +56,7 @@ function reset() {
     }
 }
 reset();
+
 function replay(){
     window.location.reload();
 }
