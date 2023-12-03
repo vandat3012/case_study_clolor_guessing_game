@@ -33,7 +33,7 @@ function createCircle() {
             if (numberPick > 0) {
                 let clickedColor = this.style.backgroundColor;
                 if(clickedColor === pickedColor) {
-                    messageDisplay.textContent = "Xin chúc mừng bạn đã lựa chọn đúng" ;
+                    messageDisplay.textContent = "Xin chúc mừng lựa chọn của bạn đã đúng" ;
                     changeColors(pickedColor);
                 }
                 else {
