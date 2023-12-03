@@ -1,43 +1,48 @@
 let numberCircle = 9;
-let colors;
+let colors = [];
 let pickedColor;
 let circle = document.querySelectorAll(".circle");
 let messageDisplay = document.getElementById("message");
 let numberPick;
+
+//Hàm tạo màu sắc ngẫu nhiên
 function doColor() {
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
+    messageDisplay.textContent = `R,G,B = ${r},${g},${b} `;
     return "rgb(" + r + ", " + g + ", " + b + ")";
 }
 
+//Hàm chọn màu sắc từ mảng colors
 function chooseColor() {
     let random = Math.floor(Math.random() * colors.length);
     return colors[random];
 }
-
+// Hàm thay đổi màu sắc các vòng tròn
 function changeColors(color) {
     for(let i = 0; i < numberCircle; i++) {
         circle[i].style.backgroundColor = color;
     }
 }
 
+//Hàm tạo sự kiện khi click vào vòng tròn
 function createCircle() {
     for (let i = 0; i < numberCircle; i++) {
         circle[i].addEventListener("click", function() {
             if (numberPick > 0) {
                 let clickedColor = this.style.backgroundColor;
                 if(clickedColor === pickedColor) {
-                    messageDisplay.textContent = "Correct!!!!!!!!! You loaded it for the first time, right?" ;
+                    messageDisplay.textContent = "Xin chúc mừng bạn đã lựa chọn đúng" ;
                     changeColors(pickedColor);
                 }
                 else {
-                    this.style.backgroundColor = "rgba(255,255,255,0.91)";
+                    this.style.backgroundColor = "rgb(255,255,255)";
                     numberPick--;
                     if (numberPick === 0) {
-                        messageDisplay.textContent = " Do you want to wash your hands again? "
+                        messageDisplay.textContent = " Bạn đã hết lần lựa chọn "
                     } else {
-                        messageDisplay.textContent = "Try again! " + " You only have " + numberPick + " turns to choose" ;
+                        messageDisplay.textContent = "Tiếp tục, " + " Bạn còn " + numberPick + " lần chọn" ;
                     }
                 }
             }
@@ -46,6 +51,7 @@ function createCircle() {
 }
 createCircle();
 
+// Hàm tạo mảng màu sắc ngẫu nhiên cho các vòng tròn
 function getRandomColors() {
     let arr = [];
     for (let i = 0; i < numberCircle; i++) {
@@ -62,8 +68,8 @@ function reset() {
             circle[i].style.backgroundColor = colors[i];
     }
 }
-reset();
 
+// Hàm thiết lập độ khó
 function setDifficulty(difficulty) {
     if (difficulty === "easy") {
         numberPick = 6;
@@ -91,4 +97,5 @@ setDifficulty("easy");
 function replay(){
     window.location.reload();
 }
+
 
